@@ -5,7 +5,17 @@
 
 ---
 
-## 📁 Project Structure
+## Live Demo
+
+The application is deployed and live at:
+
+** https://rwa-tokenization-sage.vercel.app/**
+
+> Note: The frontend is deployed on Vercel and connects to the Sepolia testnet contract. Make sure MetaMask is set to the **Sepolia Testnet** before interacting with the live site.
+
+---
+
+##  Project Structure
 
 ```
 rwa-tokenization/
@@ -39,7 +49,7 @@ rwa-tokenization/
 
 ---
 
-## ⚙️ Prerequisites
+##  Prerequisites
 
 | Tool | Version | Install |
 |------|---------|---------|
@@ -49,7 +59,9 @@ rwa-tokenization/
 
 ---
 
-## 🚀 Quick Start (Local Development)
+##  Quick Start (Local Development)
+
+> Want to skip local setup? Use the live deployment instead: https://rwa-tokenization-sage.vercel.app/
 
 ### Step 1 — Install Dependencies
 
@@ -80,7 +92,7 @@ You should see: `Compiled 2 Solidity files successfully`
 ```bash
 npx hardhat test
 ```
-Expected: All tests pass ✅
+Expected: All tests pass 
 
 ### Step 5 — Start Local Blockchain Node
 
@@ -124,7 +136,7 @@ Open: http://localhost:3000
 
 ---
 
-## 🌐 Deploy to Sepolia Testnet
+##  Deploy to Sepolia Testnet
 
 ### Get Sepolia ETH (free)
 - https://sepoliafaucet.com
@@ -144,9 +156,21 @@ npx hardhat run scripts/deploy.js --network sepolia
 
 Update `REACT_APP_CONTRACT_ADDRESS` in `frontend/.env` with the new address.
 
+### Frontend Hosting
+
+The frontend is deployed on **Vercel** and is live at:
+**https://rwa-tokenization-sage.vercel.app/**
+
+To redeploy after changes:
+```bash
+cd frontend
+vercel --prod
+```
+(Or push to the connected GitHub branch for automatic deployment via Vercel's Git integration.)
+
 ---
 
-## 📋 Smart Contract Reference
+##  Smart Contract Reference
 
 ### RWATokenization.sol (ERC-721 NFT)
 
@@ -181,7 +205,7 @@ VERIFIER_ROLE = keccak256("VERIFIER_ROLE")
 
 ---
 
-## 🔁 Asset Lifecycle
+##  Asset Lifecycle
 
 ```
 [ISSUER] registerAsset()
@@ -199,7 +223,7 @@ Ownership updated on-chain
 
 ---
 
-## 🗄️ Blockchain vs Off-Chain Storage
+##  Blockchain vs Off-Chain Storage
 
 | Data | Storage Location |
 |------|-----------------|
@@ -213,7 +237,7 @@ Ownership updated on-chain
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -224,31 +248,32 @@ Ownership updated on-chain
 | Wallet | MetaMask |
 | Web3 Library | Ethers.js v6 |
 | Frontend | React 18 |
+| Frontend Hosting | Vercel |
 | Off-chain Storage | IPFS via Pinata |
 | Version Control | GitHub |
 
 ---
 
-## 🧪 Run Tests
+##  Run Tests
 
 ```bash
 npx hardhat test
 ```
 
 Test coverage:
-- ✅ Asset registration by issuer
-- ✅ Duplicate asset ID rejection
-- ✅ Role-based access control
-- ✅ Asset verification
-- ✅ Transfer blocked for unverified assets
-- ✅ Transfer after verification
-- ✅ Non-owner transfer rejection
-- ✅ Fractional share issuance and transfer
-- ✅ Ownership percentage calculation
+-  Asset registration by issuer
+-  Duplicate asset ID rejection
+-  Role-based access control
+-  Asset verification
+-  Transfer blocked for unverified assets
+-  Transfer after verification
+-  Non-owner transfer rejection
+-  Fractional share issuance and transfer
+-  Ownership percentage calculation
 
 ---
 
-## 🔒 Security Features
+##  Security Features
 
 - **Role-based access control** via OpenZeppelin `AccessControl`
 - **Verification gate** — assets cannot be transferred until verified
@@ -259,10 +284,11 @@ Test coverage:
 
 ---
 
-## 📚 References
+##  References
 
 - [OpenZeppelin ERC-721 Docs](https://docs.openzeppelin.com/contracts/5.x/erc721)
 - [Hardhat Documentation](https://hardhat.org/docs)
 - [Ethers.js v6 Docs](https://docs.ethers.org/v6/)
 - [Pinata IPFS Docs](https://docs.pinata.cloud)
 - [Sepolia Faucet](https://sepoliafaucet.com)
+- [Live Deployment](https://rwa-tokenization-sage.vercel.app/)
